@@ -66,26 +66,33 @@ marital_map     = {"Divorced": 0, "Married": 1, "Single": 2, "Unmarried": 3}
 designation_map = {"AVP": 0, "Executive": 1, "Manager": 2, "Senior Manager": 3, "VP": 4}
 binary_map      = {"No": 0, "Yes": 1}
 
-input_df = pd.DataFrame([{
-    "Age":                       age,
-    "TypeofContact":             type_map[type_of_contact],
-    "CityTier":                  city_tier,
-    "DurationOfPitch":           duration_of_pitch,
-    "Occupation":                occupation_map[occupation],
-    "Gender":                    gender_map[gender],
-    "NumberOfPersonVisiting":    number_of_person_visiting,
-    "NumberOfFollowups":         number_of_followups,
-    "ProductPitched":            product_map[product_pitched],
-    "PreferredPropertyStar":     preferred_property_star,
-    "MaritalStatus":             marital_map[marital_status],
-    "NumberOfTrips":             number_of_trips,
-    "Passport":                  binary_map[passport],
-    "PitchSatisfactionScore":    pitch_satisfaction_score,
-    "OwnCar":                    binary_map[own_car],
-    "NumberOfChildrenVisiting":  number_of_children,
-    "Designation":               designation_map[designation],
-    "MonthlyIncome":             monthly_income,
-}])
+input_df = pd.DataFrame([{                                                                                                                                                                                                                                                 
+      "Unnamed: 0": 0,           # ← add this line                                                                                                                                                                                                                           
+      "Age": age,
+      "TypeofContact": type_map[type_of_contact],                                                                                                                                                                                                                            
+      "CityTier": city_tier,                                                                                                                                                                                                                                               
+      "DurationOfPitch": duration_of_pitch,                                                                                                                                                                                                                                  
+      "Occupation": occ_map[occupation],                                                                                                                                                                                                                                     
+      "Gender": gender_map[gender],                                                                                                                                                                                                                                          
+      "NumberOfPersonVisiting": number_of_person_visiting,                                                                                                                                                                                                                   
+      "NumberOfFollowups": number_of_followups,                                                                                                                                                                                                                              
+      "ProductPitched": product_map[product_pitched],
+      "PreferredPropertyStar": preferred_property_star,                                                                                                                                                                                                                      
+      "MaritalStatus": marital_map[marital_status],                                                                                                                                                                                                                          
+      "NumberOfTrips": number_of_trips,                                                                                                                                                                                                                                      
+      "Passport": binary_map[passport],                                                                                                                                                                                                                                      
+      "PitchSatisfactionScore": pitch_satisfaction_score,                                                                                                                                                                                                                  
+      "OwnCar": binary_map[own_car],                                                                                                                                                                                                                                         
+      "NumberOfChildrenVisiting": number_of_children,                                                                                                                                                                                                                      
+      "Designation": designation_map[designation],                                                                                                                                                                                                                           
+      "MonthlyIncome": monthly_income,                                                                                                                                                                                                                                     
+  }])
+
+cols = ["Unnamed: 0","Age","TypeofContact","CityTier","DurationOfPitch","Occupation","Gender",                                                                                                                                                                             
+        "NumberOfPersonVisiting","NumberOfFollowups","ProductPitched","PreferredPropertyStar",                                                                                                                                                                           
+        "MaritalStatus","NumberOfTrips","Passport","PitchSatisfactionScore","OwnCar",
+        "NumberOfChildrenVisiting","Designation","MonthlyIncome"]
+input_df = input_df[cols]
 
 st.divider()
 if st.button("🔍 Predict Purchase Likelihood", type="primary", use_container_width=True):
