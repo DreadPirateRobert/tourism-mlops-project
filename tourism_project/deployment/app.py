@@ -9,16 +9,22 @@ st.set_page_config(page_title="Tourism Package Predictor", page_icon="✈️", l
 # ─── Load model from HF Hub ───────────────────────────────────────────────────
 HF_USERNAME = "PratikSal13"
 
-@st.cache_resource
+@st.cache_resource                                                                                                                                                                                                                                                       
 def load_model():
-    path = hf_hub_download(
-        repo_id="PratikSal13/tourism-best-model",
-        filename="best_model.pkl",
-        token=os.environ.get("HF_TOKEN"),
-    )
-    return joblib.load(path)
+  from huggingface_hub import hf_hub_download
+  import joblib                                                                                                                                                                                                                                                          
+  path = hf_hub_download(
+      repo_id="PratikSal13/tourism-best-model",                                                                                                                                                                                                                          
+      filename="best_model.pkl",                                                                                                                                                                                                                                       
+      token=os.environ.get("HF_TOKEN"),
+  )                                                                                                                                                                                                                                                                      
+  return joblib.load(path)
 
-model = load_model()
+try:
+  model = load_model()
+except Exception as e:
+  st.error(f"Failed to load model: {e}")
+  st.stop()
 
 # ─── UI ───────────────────────────────────────────────────────────────────────
 st.title("✈️ Wellness Tourism Package Purchase Predictor")
