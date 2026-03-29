@@ -1,0 +1,14 @@
+artifact_uri: /content/mlruns/848099562284636230/88c266d700e5490db6e86beba3d9a507/artifacts
+end_time: 1774770155646
+entry_point_name: ''
+experiment_id: '848099562284636230'
+lifecycle_stage: active
+run_id: 88c266d700e5490db6e86beba3d9a507
+run_name: Bagging_v2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1774770152018
+status: 3
+tags: []
+user_id: root

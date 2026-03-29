@@ -1,0 +1,14 @@
+artifact_uri: /content/mlruns/848099562284636230/6229df53e6984e41a4c05120ac13945f/artifacts
+end_time: 1774770168231
+entry_point_name: ''
+experiment_id: '848099562284636230'
+lifecycle_stage: active
+run_id: 6229df53e6984e41a4c05120ac13945f
+run_name: RandomForest_v3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1774770163689
+status: 3
+tags: []
+user_id: root
