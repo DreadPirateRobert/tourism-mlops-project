@@ -58,16 +58,16 @@ with col2:
     number_of_trips          = st.number_input("Annual Trips", 1, 20, 3)
 
 # Encode inputs (must match LabelEncoder order used during training)
-type_map        = {"Company Invited": 0, "Self Enquiry": 1}
-occupation_map  = {"Free Lancer": 0, "Large Business": 1, "Salaried": 2, "Small Business": 3}
-gender_map      = {"Female": 0, "Male": 1}
-product_map     = {"Basic": 0, "Deluxe": 1, "King": 2, "Standard": 3, "Super Deluxe": 4}
-marital_map     = {"Divorced": 0, "Married": 1, "Single": 2, "Unmarried": 3}
-designation_map = {"AVP": 0, "Executive": 1, "Manager": 2, "Senior Manager": 3, "VP": 4}
-binary_map      = {"No": 0, "Yes": 1}
+type_map        = {"Company Invited": 0, "Self Enquiry": 1}                                                                                                                                                                                                                
+occ_map         = {"Free Lancer": 0, "Large Business": 1, "Salaried": 2, "Small Business": 3}                                                                                                                                                                              
+gender_map      = {"Female": 0, "Male": 1}                                                                                                                                                                                                                                 
+product_map     = {"Basic": 0, "Deluxe": 1, "King": 2, "Standard": 3, "Super Deluxe": 4}                                                                                                                                                                                   
+marital_map     = {"Divorced": 0, "Married": 1, "Single": 2, "Unmarried": 3}                                                                                                                                                                                               
+designation_map = {"AVP": 0, "Executive": 1, "Manager": 2, "Senior Manager": 3, "VP": 4}                                                                                                                                                                                 
+binary_map      = {"No": 0, "Yes": 1} 
 
 input_df = pd.DataFrame([{                                                                                                                                                                                                                                                 
-      "Unnamed: 0": 0,           # ← add this line                                                                                                                                                                                                                           
+      "Unnamed: 0": 0,                                                                                                                                                                                                                                   
       "Age": age,
       "TypeofContact": type_map[type_of_contact],                                                                                                                                                                                                                            
       "CityTier": city_tier,                                                                                                                                                                                                                                               
