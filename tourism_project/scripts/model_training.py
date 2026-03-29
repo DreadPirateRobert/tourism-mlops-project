@@ -44,7 +44,7 @@ for name, Cls, params_list in experiments:
             mlflow.log_metrics({"accuracy":accuracy_score(y_test,preds),
                                 "f1_score":f1_score(y_test,preds),
                                 "roc_auc":roc_auc_score(y_test,proba)})
-            mlflow.sklearn.log_model(m, "model")
+            # Model artifact saved to HF Hub via joblib below
             if f1_score(y_test,preds) > best["f1"]:
                 best.update(model=m, f1=f1_score(y_test,preds), name=name)
 
