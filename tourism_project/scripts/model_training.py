@@ -20,6 +20,7 @@ test_df  = load_dataset(DATASET_REPO, data_files="test.csv",  split="train").to_
 X_train, y_train = train_df.drop(columns=["ProdTaken"]), train_df["ProdTaken"]
 X_test,  y_test  = test_df.drop(columns=["ProdTaken"]),  test_df["ProdTaken"]
 
+os.makedirs("mlruns/.trash", exist_ok=True)
 mlflow.set_tracking_uri("mlruns")
 mlflow.set_experiment("tourism_package_prediction")
 
